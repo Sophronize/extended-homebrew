@@ -5,7 +5,7 @@
 		<description>Extended Homebrew to use with Aurora Builder</description>
 		<author url="">SophronizeVG</author>
 		<update version="1.0.0">
-			<file name="ehb.index" url="" />
+			<file name="ehb.index" url="https://raw.githubusercontent.com/sophronize/extended-homebrew/master/ehb.index" />
 		</update>
 	</info>
 	<files>
