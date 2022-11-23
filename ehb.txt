@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index>
+	<info>
+		<name>Extended Homebrew</name>
+		<description>Extended Homebrew to use with Aurora Builder</description>
+		<author url="">SophronizeVG</author>
+		<update version="1.0.0">
+			<file name="ehb.index" url="" />
+		</update>
+	</info>
+	<files>
+		<obsolete name="ehbsources.xml" url="" />
+		<file name="ehb_kibbles_artificer.xml" url=""/>
+		<file name="ehb_subclasses.xml" url=""/>
+		<file name="ehb_races.xml" url=""/>
+		<file name="ehb_monsters.xml" url=""/>
+		<file name="ehb_items.xml" url=""/>
+		<file name="ehb_feats.xml" url=""/>
+	</files>
+</index>
