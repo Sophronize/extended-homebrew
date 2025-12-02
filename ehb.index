@@ -9,12 +9,7 @@
 		</update>
 	</info>
 	<files>
-		<obsolete name="ehbsources.xml" url="" />
-		<file name="ehb_kibbles_artificer.xml" url=""/>
-		<file name="ehb_subclasses.xml" url=""/>
-		<file name="ehb_races.xml" url=""/>
-		<file name="ehb_monsters.xml" url=""/>
-		<file name="ehb_items.xml" url=""/>
-		<file name="ehb_feats.xml" url=""/>
+		<file name="invested.xml" url="" />
 	</files>
 </index>
+
