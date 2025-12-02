@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<elements>
+
+  <!-- ===========================
+       CLASS: THE INVESTED
+       =========================== -->
+  <element name="Invested" type="Class" source="Homebrew" id="ID_CLASS_INVESTED">
+    <description>
+      <p><strong>Masters of the Metallic Arts</strong></p>
+      <p><em>“Power is the soul made manifest — and the metal that binds it.”</em></p>
+
+      <p>
+        The Invested are mortals who manipulate the invisible threads of spirit through metal.
+        By burning metals, storing essence, or forging soul-spikes, they command reality through
+        the mysterious power of Investiture. Whether noble scion or haunted killer, the Invested
+        bridges the gap between mortal and divine through raw spiritual will.
+      </p>
+
+      <h4>Hit Points</h4>
+      <ul>
+        <li><strong>Hit Dice:</strong> 1d8 per Invested level</li>
+        <li><strong>Hit Points at 1st Level:</strong> 8 + your Constitution modifier</li>
+        <li><strong>Hit Points at Higher Levels:</strong> 1d8 (or 5) + your Constitution modifier per Invested level after 1st</li>
+      </ul>
+
+      <h4>Proficiencies</h4>
+      <ul>
+        <li><strong>Armor:</strong> Light armor</li>
+        <li><strong>Weapons:</strong> Simple weapons</li>
+        <li><strong>Tools:</strong> Smith’s tools</li>
+        <li><strong>Saving Throws:</strong> Constitution, Wisdom</li>
+        <li><strong>Skills:</strong> Choose two from Arcana, Insight, Investigation, Medicine, Perception, or Survival.</li>
+      </ul>
+
+      <h4>Primary Abilities</h4>
+      <p>Constitution, Wisdom</p>
+
+      <h4>Metal Dice</h4>
+      <p>
+        At the heart of your abilities lies a pool of <strong>Metal Dice</strong> — representations of the metals you channel
+        and the spirit that fuels them.
+      </p>
+      <table>
+        <thead>
+          <tr><th>Level</th><th>Metal Dice</th><th>Die Size</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1–4</td><td>2</td><td>d6</td><td>Fuel for subclass powers</td></tr>
+          <tr><td>5–10</td><td>3</td><td>d8</td><td>Increased potency</td></tr>
+          <tr><td>11–16</td><td>4</td><td>d10</td><td>Enhanced strength</td></tr>
+          <tr><td>17–20</td><td>5</td><td>d12</td><td>Peak Investiture</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Using Metal Dice.</strong> When a class or subclass feature calls for a Metal Die, roll one and apply the result as damage, healing, or power level as described.</p>
+      <p><strong>Recharging.</strong> You regain all expended Metal Dice when you finish a long rest. At 18th level (Sublime Flow), you regain half your expended Metal Dice when you finish a short rest.</p>
+      <p><strong>Augmentation.</strong> Once per turn, you can add a Metal Die to a damage roll, ability check, or saving throw.</p>
+
+      <h4>Class Features by Level</h4>
+      <table>
+        <thead>
+          <tr><th>Level</th><th>Features</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Metallic Connection, Metal Dice</td></tr>
+          <tr><td>2</td><td>Metal Sense</td></tr>
+          <tr><td>3</td><td>Path Feature, Refined Technique</td></tr>
+          <tr><td>4</td><td>Ability Score Improvement</td></tr>
+          <tr><td>5</td><td>Path Feature</td></tr>
+          <tr><td>6</td><td>Extra Metal Die (3 total)</td></tr>
+          <tr><td>7</td><td>Path Feature</td></tr>
+          <tr><td>8</td><td>Ability Score Improvement</td></tr>
+          <tr><td>9</td><td>Path Feature</td></tr>
+          <tr><td>10</td><td>Metal Resilience</td></tr>
+          <tr><td>11</td><td>Quick Burn</td></tr>
+          <tr><td>12</td><td>Ability Score Improvement</td></tr>
+          <tr><td>13</td><td>Path Feature</td></tr>
+          <tr><td>14</td><td>Path Capstone</td></tr>
+          <tr><td>15</td><td>Dual Manipulation</td></tr>
+          <tr><td>16</td><td>Ability Score Improvement</td></tr>
+          <tr><td>17</td><td>Master of Metals</td></tr>
+          <tr><td>18</td><td>Sublime Flow</td></tr>
+          <tr><td>19</td><td>Ability Score Improvement</td></tr>
+          <tr><td>20</td><td>Ascendant Being</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Metallic Arts Summary</h4>
+      <p><strong>Allomantic Metals:</strong> Iron (Pull), Steel (Push), Pewter (Strength), Tin (Senses), Brass (Soothe), Zinc (Riot), Bronze (Seek), Copper (Hide), Gold (Heal), Electrum (Future Glimpse)</p>
+      <p><strong>Feruchemical Attributes:</strong> Strength, Health, Speed, Perception, Stamina, Weight</p>
+      <p><strong>Hemalurgic Spikes:</strong> Bestial, Arcane, Resilient, Divine, Mental</p>
+    </description>
+
+    <!-- Simple sheet blurb -->
+    <sheet>
+      <description>A mortal who channels spiritual power through metal, choosing a Path of Allomancy, Feruchemy, or Hemalurgy.</description>
+    </sheet>
+
+    <!-- NOTE: Aurora's official data also encodes hit die, proficiencies, etc. in rules/stats.
+         To keep this portable, this class relies mostly on description text.
+         You can copy how Cleric/Fighter do it in the official XML and mirror that here. -->
+  </element>
+
+  <!-- ===========================
+       CORE CLASS FEATURES
+       =========================== -->
+
+  <!-- 1st: Metallic Connection + Metal Dice -->
+  <element name="Metallic Connection" type="Class Feature" source="Homebrew" id="ID_CLASS_FEATURE_INVESTED_METALLIC_CONNECTION">
+    <supports>Invested</supports>
+    <description>
+      <p><strong>Metallic Connection</strong></p>
+      <p><em>1st-level Invested feature</em></p>
+      <p>
+        You awaken your soul’s link to the Metallic Arts and choose a <strong>Path</strong>:
+        Allomancy, Feruchemy, or Hemalurgy. Your choice grants you features at 1st level and again
+        at 3rd, 5th, 7th, 9th, 13th, and 14th levels.
+      </p>
+      <p>
+        Your mastery of metal also grants you a pool of <strong>Metal Dice</strong>, which fuel many of your
+        abilities. At 1st level, you have two Metal Dice, which are d6s. You expend Metal Dice to
+        power class and subclass features.
+      </p>
+      <p>
+        When you finish a long rest, you regain all expended Metal Dice. Starting at 18th level
+        (Sublime Flow), you also regain half of your expended Metal Dice when you finish a short rest.
+      </p>
+      <p>
+        <strong>Augmentation.</strong> Once per turn, when you make a damage roll, ability check, or saving throw,
+        you can roll one of your Metal Dice and add the result to the roll.
+      </p>
+    </description>
+  </element>
+
+  <!-- 2nd: Metal Sense -->
+  <element name="Metal Sense" type="Class Feature" source="Homebrew" id="ID_CLASS_FEATURE_INVESTED_METAL_SENSE">
+    <supports>Invested</supports>
+    <description>
+      <p><strong>Metal Sense</strong></p>
+      <p><em>2nd-level Invested feature</em></p>
+      <p>
+        Your soul resonates with nearby metal. You can detect the presence of metal within 30 feet of you,
+        even if it is behind total cover, though not its precise shape. You also sense the presence of
+        Invested or magical creatures or objects within this range, though not their exact identity.
+      </p>
+      <p>
+        You have advantage on Intelligence (Investigation) checks to locate hidden metals, metallic
+        mechanisms, or constructs.
+      </p>
+    </description>
+  </element>
+
+  <!-- 3rd: Refined Technique -->
+  <element name="Refined Technique" type="Class Feature" source="Homebrew" id="ID_CLASS_FEATURE_INVESTED_REFINED_TECHNIQUE">
+    <supports>Invested</supports>
+    <description>
+      <p><strong>Refined Technique</strong></p>
+      <p><em>3rd-level Invested feature</em></p>
+      <p>
+        You learn to streamline your metalworking of the soul. Once per short or long rest, you can use
+        one <strong>minor subclass ability</strong> that normally takes an action as a bonus action instead.
+        (Your DM determines which features of your chosen Path count as “minor” for this purpose, but
+        generally shorter-duration, single-target, or utility effects qualify.)
+      </p>
+    </description>
+  </element>
+
+  <!-- 6th: Extra Metal Die (scaling note) -->
+  <element name="Extra Metal Die" type="Class Feature" source="Homebrew" id="ID_CLASS_FEATURE_INVESTED_EXTRA_METAL_DIE">
+    <supports>Invested</supports>
+    <description>
+      <p><strong>Extra Metal Die</strong></p>
+      <p><em>6th-level Invested feature</em></p>
+      <p>
+        Your reserves deepen. At 6th level, your pool of Metal Dice increases to <strong>3 dice</strong>, and
+        their size becomes <strong>d8</strong>. This matches the Metal Dice table in the class description.
+      </p>
+    </description>
+  </element>
+
+  <!-- 10th: Metal Resilience -->
+  <element name="Metal Resilience" type="Class Feature" source="Homebrew" id="ID_CLASS_FEATURE_INVESTED_METAL_RESILIENCE">
+    <supports>Invested</supports>
+    <description>
+      <p><strong>Metal Resilience</strong></p>
+      <p><em>10th-level Invested feature</em></p>
+      <p>
+        Your soul flows more readily through your metal reserves. When you roll initiative, you regain
+        1 expended Metal Die.
+      </p>
+    </description>
+  </element>
+
+  <!-- 11th: Quick Burn -->
+  <element name="Quick Burn" type="Class Feature" source="Homebrew" id="ID_CLASS_FEATURE_INVESTED_QUICK_BURN">
+    <supports>Invested</supports>
+    <description>
+      <p><strong>Quick Burn</strong></p>
+      <p><em>11th-level Invested feature</em></p>
+      <p>
+        You can flare metals with remarkable speed. Once on each of your turns, you can use a subclass
+        ability that normally requires an action as a bonus action instead.
+      </p>
+    </description>
+  </element>
+
+  <!-- 15th: Dual Manipulation -->
+  <element name="Dual Manipulation" type="Class Feature" source="Homebrew" id="ID_CLASS_FEATURE_INVESTED_DUAL_MANIPULATION">
+    <supports>Invested</supports>
+    <description>
+      <p><strong>Dual Manipulation</strong></p>
+      <p><em>15th-level Invested feature</em></p>
+      <p>
+        You can split your focus between multiple streams of power. On your turn, you can use
+        <strong>two different metal-based abilities</strong>, as long as they come from different sources
+        (such as different metals or attributes) and obey the normal action economy. For example, you might
+        burn Steel and Pewter in the same turn, or Tap Speed and Strength at once.
+      </p>
+    </description>
+  </element>
+
+  <!-- 17th: Master of Metals -->
+  <element name="Master of Metals" type="Class Feature" source="Homebrew" id="ID_CLASS_FEATURE_INVESTED_MASTER_OF_METALS">
+    <supports>Invested</supports>
+    <description>
+      <p><strong>Master of Metals</strong></p>
+      <p><em>17th-level Invested feature</em></p>
+      <p>
+        You have studied the Metallic Arts beyond the bounds of your own discipline. Choose one feature
+        from another <strong>Path of the Invested</strong> (Allomancer, Feruchemist, or Hemalurgist)
+        that is gained at 1st, 3rd, 5th, 7th, 9th, or 13th level in that Path. You gain that feature,
+        using your Invested level in place of that Path’s level when needed.
+      </p>
+      <p>
+        You count as a member of that Path solely for the purpose of using this feature.
+      </p>
+    </description>
+  </element>
+
+  <!-- 18th: Sublime Flow -->
+  <element name="Sublime Flow" type="Class Feature" source="Homebrew" id="ID_CLASS_FEATURE_INVESTED_SUBLIME_FLOW">
+    <supports>Invested</supports>
+    <description>
+      <p><strong>Sublime Flow</strong></p>
+      <p><em>18th-level Invested feature</em></p>
+      <p>
+        Your spirit and metals cycle in a constant rhythm. When you finish a short rest, you regain
+        Metal Dice equal to <strong>half</strong> the number you have expended (rounded down).
+      </p>
+    </description>
+  </element>
+
+  <!-- 20th: Ascendant Being -->
+  <element name="Ascendant Being" type="Class Feature" source="Homebrew" id="ID_CLASS_FEATURE_INVESTED_ASCENDANT_BEING">
+    <supports>Invested</supports>
+    <description>
+      <p><strong>Ascendant Being</strong></p>
+      <p><em>20th-level Invested feature</em></p>
+      <p>
+        For a brief time, your body radiates pure Investiture and you stand on the edge of divinity.
+        As an action, you can enter an ascendant state that lasts for 1 minute. For the duration:
+      </p>
+      <ul>
+        <li>You treat your Metal Dice as <strong>unlimited</strong>; you can expend them without tracking uses.</li>
+        <li>You have advantage on all saving throws.</li>
+        <li>You have resistance to all damage types.</li>
+        <li>Your weapon attacks and offensive abilities deal radiant or necrotic damage (your choice) instead of their normal type.</li>
+      </ul>
+      <p>
+        Once you use this feature, you can’t use it again until you finish a long rest.
+      </p>
+    </description>
+  </element>
+
+  <!-- ===========================
+       PATHS OF THE INVESTED
+       Implemented as Archetypes
+       =========================== -->
+
+  <!-- ===== PATH OF THE ALLOMANCER ===== -->
+  <element name="Path of the Allomancer" type="Archetype" source="Homebrew" id="ID_ARCHETYPE_INVESTED_ALLOMANCER">
+    <supports>Invested</supports>
+    <description>
+      <p><strong>Path of the Allomancer</strong></p>
+      <p><em>“I am the storm that bends iron and wills men.”</em></p>
+      <p>
+        Allomancers consume and “burn” trace metals within their bodies to unleash bursts of spiritual power.
+        Iron and Steel push and pull, Pewter hardens flesh, and subtle metals twist emotions and obscure
+        detection. An Allomancer fights as a living engine of flaring metal and will.
+      </p>
+    </description>
+  </element>
+
+  <!-- Allomancer 1: Burn Metals -->
+  <element name="Burn Metals" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_ALLOMANCER_BURN_METALS">
+    <supports>Path of the Allomancer</supports>
+    <description>
+      <p><strong>Burn Metals</strong></p>
+      <p><em>1st-level Path of the Allomancer feature</em></p>
+      <p>
+        You can burn specific metals by expending a Metal Die to produce one of the following effects.
+        Unless otherwise noted, each effect lasts until the start of your next turn.
+      </p>
+
+      <table>
+        <thead>
+          <tr><th>Metal</th><th>Effect</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Iron</strong></td>
+            <td>
+              <strong>Pull.</strong> As an action, choose a metallic object or a creature wearing/carrying metal
+              within 30 feet. The target must succeed on a Strength saving throw (DC = 8 + your proficiency bonus + your Wisdom modifier)
+              or be pulled up to 10 feet toward you, plus 5 feet for each Metal Die expended.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Steel</strong></td>
+            <td>
+              <strong>Push.</strong> As an action, choose an object or creature within 30 feet. The target must succeed
+              on a Strength saving throw or be shoved 10 feet away from you, plus 5 feet per Metal Die spent. Alternatively,
+              you can propel yourself, increasing your jump distance and ignoring difficult terrain until the end of your turn.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Pewter</strong></td>
+            <td>
+              You gain a +2 bonus to Strength checks, and you gain temporary hit points equal to the result of your Metal Die
+              + your Constitution modifier. These benefits last for 1 minute.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Tin</strong></td>
+            <td>
+              For 1 minute, you have advantage on Wisdom (Perception) and Intelligence (Investigation) checks, and you can see
+              in dim light as if it were bright light.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Brass</strong></td>
+            <td>
+              As an action, you soothe a creature’s emotions (as the <em>calm emotions</em> spell) within 30 feet.
+              The target must make a Charisma saving throw against your Invested save DC (8 + your proficiency bonus + your Wisdom modifier).
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Zinc</strong></td>
+            <td>
+              As an action, you incite a creature within 30 feet to hostility. On a failed Wisdom saving throw, the target must
+              use its reaction (if available) to make one melee attack against a creature of your choice.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Bronze</strong></td>
+            <td>
+              You sense Invested or magical effects within 30 feet of you until the end of your next turn, learning their general
+              direction and school or nature of power, if any.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Copper</strong></td>
+            <td>
+              For 1 minute, you and creatures of your choice within 10 feet of you are veiled from divination and detection effects,
+              as if affected by <em>nondetection</em>.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Gold</strong></td>
+            <td>
+              You regain hit points equal to the result of your Metal Die + your Wisdom modifier.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Electrum</strong></td>
+            <td>
+              The next time you make an attack roll, ability check, or saving throw within 1 minute, roll 2d20 and choose either result.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </description>
+  </element>
+
+  <!-- Allomancer 5: Duralumin Flare -->
+  <element name="Duralumin Flare" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_ALLOMANCER_DURALUMIN_FLARE">
+    <supports>Path of the Allomancer</supports>
+    <description>
+      <p><strong>Duralumin Flare</strong></p>
+      <p><em>5th-level Path of the Allomancer feature</em></p>
+      <p>
+        When you burn a metal using a Metal Die, you can expend an <strong>additional</strong> Metal Die to flare it with
+        duralumin. The metal’s range, potency, or duration (your choice) is doubled. For example, you might double Steel’s
+        shove distance, Tin’s duration, or the temporary hit points granted by Pewter.
+      </p>
+    </description>
+  </element>
+
+  <!-- Allomancer 9: Precision Push/Pull -->
+  <element name="Precision Push/Pull" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_ALLOMANCER_PRECISION">
+    <supports>Path of the Allomancer</supports>
+    <description>
+      <p><strong>Precision Push/Pull</strong></p>
+      <p><em>9th-level Path of the Allomancer feature</em></p>
+      <p>
+        You can apply force to even small or non-metallic objects. While burning Iron or Steel, you can Push or Pull
+        non-metallic objects up to 20 pounds within 30 feet and manipulate them with fine precision, such as opening
+        latches, drawing weapons, or moving keys and small items.
+      </p>
+    </description>
+  </element>
+
+  <!-- Allomancer 13: Steelrunner -->
+  <element name="Steelrunner" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_ALLOMANCER_STEELRUNNER">
+    <supports>Path of the Allomancer</supports>
+    <description>
+      <p><strong>Steelrunner</strong></p>
+      <p><em>13th-level Path of the Allomancer feature</em></p>
+      <p>
+        While you are burning Steel or Pewter, your speed increases by 20 feet, and you can take the Dash action as a
+        bonus action on each of your turns for up to 1 minute.
+      </p>
+    </description>
+  </element>
+
+  <!-- Allomancer 14: Mistborn Ascendant -->
+  <element name="Mistborn Ascendant" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_ALLOMANCER_MISTBORN_ASCENDANT">
+    <supports>Path of the Allomancer</supports>
+    <description>
+      <p><strong>Mistborn Ascendant</strong></p>
+      <p><em>14th-level Path of the Allomancer feature</em></p>
+      <p>
+        Once per long rest, you can burn all metals in a storm of power. As a bonus action, you enter a Mistborn state
+        for 1 minute. For the duration:
+      </p>
+      <ul>
+        <li>You can use <strong>two metal powers per turn</strong>.</li>
+        <li>You have advantage on all saving throws.</li>
+        <li>You have resistance to bludgeoning, piercing, and slashing damage.</li>
+      </ul>
+    </description>
+  </element>
+
+  <!-- ===== PATH OF THE FERUCHEMIST ===== -->
+  <element name="Path of the Feruchemist" type="Archetype" source="Homebrew" id="ID_ARCHETYPE_INVESTED_FERUCHEMIST">
+    <supports>Invested</supports>
+    <description>
+      <p><strong>Path of the Feruchemist</strong></p>
+      <p><em>“I store what I am so I may become what I must.”</em></p>
+      <p>
+        Feruchemists store their own essence within metalminds, drawing upon it later to amplify themselves.
+        They pay a price now to gain incredible power in the moments that matter.
+      </p>
+    </description>
+  </element>
+
+  <!-- Feruchemist 1: Store and Tap -->
+  <element name="Store and Tap" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_FERUCHEMIST_STORE_TAP">
+    <supports>Path of the Feruchemist</supports>
+    <description>
+      <p><strong>Store and Tap</strong></p>
+      <p><em>1st-level Path of the Feruchemist feature</em></p>
+      <p>
+        You can store or tap one of the following attributes in a metalmind you carry:
+        <strong>Strength, Health, Speed, Perception, Stamina, or Weight</strong>.
+      </p>
+      <p>
+        <strong>Store.</strong> For each hour you store an attribute, you take a –2 penalty to checks and rolls that
+        rely on that attribute (as decided by the DM). The stored power accumulates in your metalmind.
+      </p>
+      <p>
+        <strong>Tap.</strong> As a bonus action, you can Tap one stored attribute, expending a Metal Die. For a number
+        of minutes equal to your Invested level, you gain a +2 bonus on rolls using that attribute (such as Strength checks,
+        Constitution saving throws for Stamina, or Wisdom (Perception) checks for Perception).
+      </p>
+    </description>
+  </element>
+
+  <!-- Feruchemist 5: Doublemind Storage -->
+  <element name="Doublemind Storage" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_FERUCHEMIST_DOUBLEMIND">
+    <supports>Path of the Feruchemist</supports>
+    <description>
+      <p><strong>Doublemind Storage</strong></p>
+      <p><em>5th-level Path of the Feruchemist feature</em></p>
+      <p>
+        You can store or tap <strong>two attributes at once</strong>. When you do so, each attribute functions as it
+        normally would for Store and Tap, but you must track each separately.
+      </p>
+    </description>
+  </element>
+
+  <!-- Feruchemist 9: Compound Reserves -->
+  <element name="Compound Reserves" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_FERUCHEMIST_COMPOUND_RESERVES">
+    <supports>Path of the Feruchemist</supports>
+    <description>
+      <p><strong>Compound Reserves</strong></p>
+      <p><em>9th-level Path of the Feruchemist feature</em></p>
+      <p>
+        When you expend a Metal Die to Tap an attribute, roll the die twice and choose the higher result to determine any
+        effect that scales with the die’s roll (such as bonus hit points or bonus movement if your DM uses such scaling).
+      </p>
+    </description>
+  </element>
+
+  <!-- Feruchemist 13: Feruchemical Flow -->
+  <element name="Feruchemical Flow" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_FERUCHEMIST_FLOW">
+    <supports>Path of the Feruchemist</supports>
+    <description>
+      <p><strong>Feruchemical Flow</strong></p>
+      <p><em>13th-level Path of the Feruchemist feature</em></p>
+      <p>
+        You can begin storing an attribute as a bonus action instead of needing extended downtime. You can maintain
+        this focused storage for up to 10 minutes, suffering the normal penalties while rapidly filling your metalminds.
+      </p>
+    </description>
+  </element>
+
+  <!-- Feruchemist 14: Fullborn Surge -->
+  <element name="Fullborn Surge" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_FERUCHEMIST_FULLBORN_SURGE">
+    <supports>Path of the Feruchemist</supports>
+    <description>
+      <p><strong>Fullborn Surge</strong></p>
+      <p><em>14th-level Path of the Feruchemist feature</em></p>
+      <p>
+        Once per long rest, you may unleash all your stored attributes at once. As a bonus action, you Tap all attributes
+        you currently have stored for 1 minute. For the duration:
+      </p>
+      <ul>
+        <li>You gain a +2 bonus on all rolls.</li>
+        <li>At the start of each of your turns, you regain 10 hit points.</li>
+        <li>You have resistance to all damage except psychic.</li>
+      </ul>
+    </description>
+  </element>
+
+  <!-- ===== PATH OF THE HEMALURGIST ===== -->
+  <element name="Path of the Hemalurgist" type="Archetype" source="Homebrew" id="ID_ARCHETYPE_INVESTED_HEMALURGIST">
+    <supports>Invested</supports>
+    <description>
+      <p><strong>Path of the Hemalurgist</strong></p>
+      <p><em>“Through death, I claim power.”</em></p>
+      <p>
+        Hemalurgists steal fragments of souls, embedding them as spikes. Each spike grants great power — and greater
+        damnation. Their bodies and minds warp under the weight of stolen Investiture, tracked by a Corruption score.
+      </p>
+    </description>
+  </element>
+
+  <!-- Hemalurgist 1: Hemalurgic Craft -->
+  <element name="Hemalurgic Craft" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_HEMALURGIST_CRAFT">
+    <supports>Path of the Hemalurgist</supports>
+    <description>
+      <p><strong>Hemalurgic Craft</strong></p>
+      <p><em>1st-level Path of the Hemalurgist feature</em></p>
+      <p>
+        You can forge soul-spikes from the dead. When a creature dies within 10 feet of you, you can spend 1 hour
+        working with a suitable piece of metal to craft a <strong>Hemalurgic spike</strong> from the creature’s remains.
+      </p>
+      <p>
+        Each spike grants you one trait from the creature and increases your <strong>Corruption</strong> by 1.
+        Your maximum number of spikes equals your proficiency bonus. If you ever exceed this limit, you must immediately
+        choose and destroy spikes until you are at or below the maximum.
+      </p>
+
+      <table>
+        <thead>
+          <tr><th>Spike Type</th><th>Benefit</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bestial</strong></td>
+            <td>You gain a +2 bonus to Strength <em>or</em> Dexterity (your choice when the spike is created).</td>
+          </tr>
+          <tr>
+            <td><strong>Arcane</strong></td>
+            <td>You learn one 1st-level spell from the creature’s spell list. You can cast it once per long rest without a spell slot, using Wisdom as your casting ability.</td>
+          </tr>
+          <tr>
+            <td><strong>Resilient</strong></td>
+            <td>You gain a +1 bonus to AC <em>or</em> resistance to one damage type the creature could resist.</td>
+          </tr>
+          <tr>
+            <td><strong>Divine</strong></td>
+            <td>When you reduce a creature to 0 hit points, you regain hit points equal to your proficiency bonus.</td>
+          </tr>
+          <tr>
+            <td><strong>Mental</strong></td>
+            <td>You have advantage on Wisdom <em>or</em> Intelligence checks (choose one when the spike is created).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Your <strong>Corruption</strong> score is equal to the number of spikes you currently bear. The DM may call
+        for additional roleplay or drawbacks as your Corruption grows.
+      </p>
+    </description>
+  </element>
+
+  <!-- Hemalurgist 5: Blood for Power -->
+  <element name="Blood for Power" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_HEMALURGIST_BLOOD_FOR_POWER">
+    <supports>Path of the Hemalurgist</supports>
+    <description>
+      <p><strong>Blood for Power</strong></p>
+      <p><em>5th-level Path of the Hemalurgist feature</em></p>
+      <p>
+        You can trade your own life for fuel. As a bonus action, you can take damage equal to your proficiency bonus
+        to regain one expended Metal Die.
+      </p>
+    </description>
+  </element>
+
+  <!-- Hemalurgist 9: Hybrid Spikes -->
+  <element name="Hybrid Spikes" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_HEMALURGIST_HYBRID_SPIKES">
+    <supports>Path of the Hemalurgist</supports>
+    <description>
+      <p><strong>Hybrid Spikes</strong></p>
+      <p><em>9th-level Path of the Hemalurgist feature</em></p>
+      <p>
+        You can merge the powers of your spikes. When crafting a spike, you can combine two spike traits into one
+        hybrid spike. This hybrid spike counts as <strong>2 Corruption</strong> and uses up two of your spike slots,
+        but grants both chosen benefits.
+      </p>
+    </description>
+  </element>
+
+  <!-- Hemalurgist 13: Controlled Madness -->
+  <element name="Controlled Madness" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_HEMALURGIST_CONTROLLED_MADNESS">
+    <supports>Path of the Hemalurgist</supports>
+    <description>
+      <p><strong>Controlled Madness</strong></p>
+      <p><em>13th-level Path of the Hemalurgist feature</em></p>
+      <p>
+        You ride the edge of sanity without falling. You have advantage on saving throws against being charmed,
+        frightened, or magically dominated. In addition, you add your current <strong>Corruption</strong> score to
+        all Charisma (Intimidation) checks.
+      </p>
+    </description>
+  </element>
+
+  <!-- Hemalurgist 14: Godblood Ascendant -->
+  <element name="Godblood Ascendant" type="Class Feature" source="Homebrew" id="ID_FEATURE_INVESTED_HEMALURGIST_GODBLOOD_ASCENDANT">
+    <supports>Path of the Hemalurgist</supports>
+    <description>
+      <p><strong>Godblood Ascendant</strong></p>
+      <p><em>14th-level Path of the Hemalurgist feature</em></p>
+      <p>
+        Once per long rest, you can fully embrace your corruption. As a bonus action, you enter a Godblood state
+        for 1 minute. For the duration:
+      </p>
+      <ul>
+        <li>You have resistance to all damage.</li>
+        <li>You can use any Path of the Invested ability, regardless of which Path you chose.</li>
+      </ul>
+      <p>
+        When the state ends, you take 4d12 necrotic damage that can’t be reduced in any way, and your
+        <strong>Corruption</strong> score increases by 1 permanently.
+      </p>
+    </description>
+  </element>
+
+</elements>
