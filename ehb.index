@@ -9,7 +9,8 @@
 		</update>
 	</info>
 	<files>
-		<file name="invested.xml" url="" />
+		<file name="invested.xml" url="https://raw.githubusercontent.com/Sophronize/extended-homebrew/refs/heads/main/invested/Invested.xml" />
 	</files>
 </index>
+
 
